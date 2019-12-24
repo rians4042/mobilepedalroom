@@ -75,18 +75,36 @@ body: DefaultTabController(
   
           },
   
-          body: Center(
+          body: Container(
   
             child: TabBarView(
               children: <Widget>[
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      Text("Frame"),
-                      Text('rims')
-                    ],
-                  )
+                ListView.builder(
+                  itemBuilder: (context, position) {
+                    return ListTile(
+                      title: Text('Frame'),
+                      subtitle: Text('Nagasawa'),
+                    );
+                    /* Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(position.toString(), style: TextStyle(fontSize: 20.0)),
+                      ),
+                    );*/
+                  },
                 ),
+//  ========================================
+            /*    Card(
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        const ListTile(
+          title: Text('Heart Shaker'),
+          subtitle: Text('TWICE'),
+        ),
+      ],
+    ),
+  ),*/
                 Icon(Icons.print)
               ],
             ),
